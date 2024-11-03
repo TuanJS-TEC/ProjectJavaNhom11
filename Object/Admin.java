@@ -1,6 +1,7 @@
 package ProjectJavaNhom11.Object;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Admin implements Comparable<Admin>{
     public static int count=1;
