@@ -2,21 +2,64 @@ package ProjectJavaNhom11.Function;
 
 import ProjectJavaNhom11.Function.UserManager;
 
+import java.util.Scanner;
+
 public class Main {
+    private static UserManager userManager = new UserManager();
+
     public static void main(String[] args) {
-        // Khởi tạo đối tượng UserManager
-        UserManager userManager = new UserManager();
+        Scanner scanner = new Scanner(System.in);
 
-        // Đăng ký tài khoản mới
-        String result1 = userManager.register("Nguyen Van A", "email@example.com", "password123", "01-01-1990", "Nam", "0901234567", "123 Đường ABC", "123456789");
-        System.out.println(result1);  // Kết quả sẽ là thông báo thành công hoặc lỗi
+        while (true) {
+            System.out.println("Chọn chức năng:");
+            System.out.println("1. Đăng ký");
+            System.out.println("2. Thoát");
 
-        // Thử đăng ký tài khoản khác với cùng email để kiểm tra tính duy nhất
-        String result2 = userManager.register("Tran Thi B", "email@example.com", "password123", "02-02-1992", "Nu", "0912345678", "456 Đường XYZ", "987654321");
-        System.out.println(result2);  // Kết quả: Email đã được sử dụng.
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Đọc bỏ dòng mới
 
-        // Đăng ký tài khoản khác với email mới
-        String result3 = userManager.register("Le Van C", "newemail@example.com", "password456", "03-03-1993", "Nam", "0933333333", "789 Đường DEF", "123123123");
-        System.out.println(result3);  // Kết quả sẽ là thông báo thành công cho tài khoản mới
+            if (choice == 1) {
+                registerUser(scanner);
+            } else if (choice == 2) {
+                System.out.println("Thoát chương trình.");
+                break;
+            } else {
+                System.out.println("Lựa chọn không hợp lệ.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void registerUser(Scanner scanner) {
+        System.out.println("=== Đăng Ký Tài Khoản ===");
+
+        System.out.print("Nhập tên người dùng: ");
+        String tenNguoiDung = scanner.nextLine();
+
+        System.out.print("Nhập email: ");
+        String email = scanner.nextLine();
+
+        System.out.print("Nhập mật khẩu: ");
+        String password = scanner.nextLine();
+
+        System.out.print("Nhập ngày sinh (dd-mm-yyyy): ");
+        String dob = scanner.nextLine();
+
+        System.out.print("Nhập giới tính: ");
+        String gioiTinh = scanner.nextLine();
+
+        System.out.print("Nhập số điện thoại: ");
+        String sdt = scanner.nextLine();
+
+        System.out.print("Nhập địa chỉ giao hàng: ");
+        String diaChiGiaoHang = scanner.nextLine();
+
+        System.out.print("Nhập số tài khoản ngân hàng: ");
+        String tknh = scanner.nextLine();
+
+        // Gọi phương thức register để tạo tài khoản
+        String result = userManager.register(tenNguoiDung, email, password, dob, gioiTinh, sdt, diaChiGiaoHang,NganHang,tknh);
+        System.out.println(result);
     }
 }

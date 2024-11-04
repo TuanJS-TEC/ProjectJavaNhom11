@@ -5,7 +5,7 @@ import java.util.*;
 public class User implements Comparable<User>, Iterable{
     public static int count=1;
     public String id,tenNguoiDung,email,password;
-    public String dob,gioiTinh,sdt,diaChiGiaoHang,tknh;
+    public String dob,gioiTinh,sdt,diaChiGiaoHang,NganHang,tknh;
     public ArrayList<Cart> gio;
     public User() {
     }
@@ -19,6 +19,7 @@ public class User implements Comparable<User>, Iterable{
         this.gioiTinh = gioiTinh;
         this.sdt = sdt;
         this.diaChiGiaoHang = diaChiGiaoHang;
+        this.NganHang = NganHang;
         this.tknh = tknh;
         this.gio=new ArrayList<>();
         count++;
@@ -86,6 +87,11 @@ public class User implements Comparable<User>, Iterable{
 
     public void setDiaChiGiaoHang(String diaChiGiaoHang) {
         this.diaChiGiaoHang = diaChiGiaoHang;
+    }
+
+    public String getNganHang() { return NganHang; }
+    public void setNganHang(String nganHang) {
+        this.NganHang = nganHang;
     }
 
     public String getTknh() {

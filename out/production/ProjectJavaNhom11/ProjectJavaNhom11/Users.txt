@@ -1,0 +1,7 @@
+KH001,Hoang Minh Tuan ,codfish225@gmail.com,13-10-2004,Nam,0386008099,0386008099ID User: KH001
+User Name: Chu Bao Chau
+User's Email: ChuChau0812@gmail.com
+User's DOB: 08-12-2004
+User's Gender: Male
+User's SDT0989488746
+User's TKNH0949488746
